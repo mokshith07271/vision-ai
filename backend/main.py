@@ -9,15 +9,18 @@ from ultralytics import YOLO
 
 app = FastAPI(title="VisionAI")
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://mokshith07271.github.io",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 MODEL_NAME = "yolo26n.pt"
 model = YOLO(MODEL_NAME)
